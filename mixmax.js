@@ -2,16 +2,40 @@
 Whenever this programm runs, a random message should be presented to the user.
 */
 
-// define messages we want to put out randomly
-const message =[[mes1], [mes2], [mes3]]
+const fortuneTeller = () => {
 
-// define username
+    //creating helper function to randomly generate numbers and keep code dry
+    const randomNumber = numOfParams => {
+        return Math.floor(Math.random() * numOfParams);
+    }
 
-// define weekday
-let date = getdate(today);
-let user = getusername(username);
+    //randomly generating time periods
+    const timePeriod = () => {
+        const timePeriods = ['Heute', 'Morgen', 'Diese Woche', 'Nächste Woche']
+        return timePeriods[randomNumber(timePeriods.length)];
+    };
 
-// define randomizer
+    //randomly generating adjectives
+    const adjective = () => {
+        const adjectives = ['gut', 'schlecht', 'super', 'blöd', 'passende'];
+        return adjectives[randomNumber(adjectives.length)];
+    };
 
-// define output
-console.log('Hello ${user}! Today is ${date}. /n ${message} ')
+    //randomly generating much or less
+    const multi = () => {
+        const multiplier = ['viel', 'wenig'];
+        return multiplier[randomNumber(multiplier.length)];
+    }
+
+
+    //randomly generating topics
+    const topic = () => {
+        const topics = ['Geld', 'Liebe', 'Gesundheit', 'Freundschaft', 'Arbeit'];
+        return topics[randomNumber(topics.length)];
+    }
+
+    //returning final randomly generating fortune
+    return `${timePeriod()} kannst du ${adjective()} Nachrichten in ${topic()} erwarten, und ${multi()} Glück in ${topic()}.`
+}
+
+console.log(fortuneTeller());
