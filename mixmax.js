@@ -17,7 +17,7 @@ const fortuneTeller = () => {
 
     //randomly generating adjectives
     const adjective = () => {
-        const adjectives = ['gut', 'schlecht', 'super', 'blöd', 'passende'];
+        const adjectives = ['gute', 'schlechte', 'super', 'blöde', 'passende'];
         return adjectives[randomNumber(adjectives.length)];
     };
 
@@ -30,7 +30,7 @@ const fortuneTeller = () => {
 
     //randomly generating topics
     const topic = () => {
-        const topics = ['Geld', 'Liebe', 'Gesundheit', 'Freundschaft', 'Arbeit'];
+        const topics = ['Gelddingen', 'der Liebe', 'Gesundheitsfragen', 'Freundschaften', 'Arbeitsbelangen'];
         return topics[randomNumber(topics.length)];
     }
 
